@@ -1,0 +1,42 @@
+---
+
+- name: Download gofish installer | get_url
+  get_url:
+    url: https://raw.githubusercontent.com/fishworks/gofish/main/scripts/install.sh
+    dest: /tmp/gofish-install.sh
+    mode: 0755
+
+- name: Install gofish | get_url
+  command:
+    cmd: /tmp/gofish-install.sh
+    creates: /usr/local/bin/gofish
+
+- name: Initilize gofish | command
+  become: true
+  command:
+    cmd: gofish init
+    creates: "{{ lookup('env', 'HOME') }}/.gofish"
+
+# - name: 
+#   command:
+#     cmd: gofish install ${{}}
+
+- name: Validate if gofish packages aren't already installed | stat
+  stat:
+    path: "/usr/local/bin/{{ item }}"
+  loop: "{{ gofish_packages }}"
+  register: gobinaries
+
+- debug:
+    var: gobinaries
+  #when: links.stat.islnk is defined and links.stat.islnk
+
+- name: Install packages via gofish if not already present | command
+  become: true
+  command:
+    cmd: gofish install {{ item.item }}
+  when: not item.stat.exists or not item.stat.islnk
+  loop: "{{ gobinaries.results }}"
+  loop_control:
+    label: "{{ item.item}}"
+    

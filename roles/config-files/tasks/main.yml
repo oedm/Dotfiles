@@ -1,0 +1,12 @@
+---
+- name: Link dotfiles | file
+  file:
+    src: "{{ lookup('env', 'ROOTDIR') }}/roles/config-files/files/{{ item.src }}"
+    dest: "{{ lookup('env', 'HOME') }}/{{ item.dst }}"
+    state: link
+    force: yes
+  loop:
+    - {src: 'gitconfig', dst: '.gitconfig'}
+    - {src: 'gitconfig-dng', dst: '.gitconfig-dng'}
+    - {src: 'gitconfig-private', dst: '.gitconfig-private'}
+    - {src: 'gitconfig-ventx', dst: '.gitconfig-ventx'}

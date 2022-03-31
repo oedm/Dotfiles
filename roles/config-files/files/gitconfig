@@ -1,0 +1,20 @@
+[includeIf "gitdir:~/projects/ventx/"]
+    path = .gitconfig-ventx
+[includeIf "gitdir:~/projects/dng/"]
+    path = .gitconfig-dng   
+[includeIf "gitdir:~/projects/private/"]
+    path = .gitconfig-private
+[init]
+        templateDir = /home/moed/.git-template
+[diff "sopsdiffer"]
+        textconv = sops -d
+[merge "ours"]
+        driver = true
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto

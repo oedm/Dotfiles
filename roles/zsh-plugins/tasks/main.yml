@@ -1,0 +1,21 @@
+---
+# file: roles/zsh-plugins/tasks/main.yml
+
+- name: Create ~/.ssh if it does not exist | file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.ssh"
+    state: directory
+    mode: '0750'
+
+- name: Ensures ssh-agent environment file exists | file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.ssh/environment-{{ lookup('file', '/etc/hostname') }}"
+    state: touch
+    mode: u=rw,g=r,o=r
+    modification_time: preserve
+    access_time: preserve
+
+- name: Checkout zsh-autosuggestions | git
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"

@@ -1,0 +1,17 @@
+---
+gofish_packages:
+- gofish
+- helm
+- go
+- helm-docs
+- hugo
+- kubectl
+- kubectx
+- kubens
+- kustomize
+- minikube
+- saml2aws
+- sops
+- stern
+- terraform-docs
+- tflint

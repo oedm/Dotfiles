@@ -1,0 +1,13 @@
+# file: dotfiles.yml
+- name: Set up local workstation
+  hosts: local
+  roles:
+    - role: zsh
+    - role: zsh-plugins
+    - role: packages
+      tags:
+        - install
+        - go
+    - role: config-files
+      tags:
+        - config
