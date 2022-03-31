@@ -12,7 +12,8 @@ PLAYBOOK="$ROOTDIR/dotfiles.yml"
 if ! command -v ansible &> /dev/null;then
   echo "ansible not found. Attempt to install."
   if dpkg -S /bin/ls >/dev/null 2>&1;then
-    sudo apt update && sudo apt install -y ansible
+    sudo apt update && sudo apt install -y ansible python3-pip
+    pip3 install --user github3.py
   elif rpm -q -f /bin/ls >/dev/null 2>&1;then
     sudo yum install ansible
   else

@@ -1,0 +1,14 @@
+---
+- name: Get aws-vault latest tag 
+  github_release:
+    user: 99designs
+    repo: aws-vault
+    action: latest_release
+  register: awsvault_release
+
+- name: install latest aws-vault binary {{ awsvault_release.tag }}
+  become: true
+  get_url: 
+    url: "https://github.com/99designs/aws-vault/releases/download/{{ awsvault_release['tag'] }}/aws-vault-linux-amd64"
+    dest: /usr/local/bin/aws-vault
+    mode: 0755

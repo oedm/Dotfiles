@@ -4,3 +4,8 @@
   tags:
     - install
     - go
+
+- include_tasks: github.yml
+  tags:
+    - install
+    - github
