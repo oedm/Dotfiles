@@ -18,3 +18,5 @@
         diff = auto
         interactive = auto
         status = auto
+[url "git@github.com:"]
+	insteadOf = https://github.com/
