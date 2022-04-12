@@ -1,7 +1,9 @@
 [includeIf "gitdir:~/projects/ventx/"]
     path = .gitconfig-ventx
 [includeIf "gitdir:~/projects/dng/"]
-    path = .gitconfig-dng   
+    path = .gitconfig-dng
+[includeIf "gitdir:~/projects/ecb/"]
+    path = .gitconfig-ecb
 [includeIf "gitdir:~/projects/private/"]
     path = .gitconfig-private
 [init]
