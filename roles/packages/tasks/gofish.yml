@@ -17,19 +17,14 @@
     cmd: gofish init
     creates: "{{ lookup('env', 'HOME') }}/.gofish"
 
-# - name: 
-#   command:
-#     cmd: gofish install ${{}}
-
 - name: Validate if gofish packages aren't already installed | stat
   stat:
     path: "/usr/local/bin/{{ item }}"
   loop: "{{ gofish_packages }}"
   register: gobinaries
 
-- debug:
-    var: gobinaries
-  #when: links.stat.islnk is defined and links.stat.islnk
+# - debug:
+#     var: gobinaries
 
 - name: Install packages via gofish if not already present | command
   become: true

@@ -8,5 +8,6 @@
   loop:
     - {src: 'gitconfig', dst: '.gitconfig'}
     - {src: 'gitconfig-dng', dst: '.gitconfig-dng'}
+    - {src: 'gitconfig-ecb', dst: '.gitconfig-ecb'}
     - {src: 'gitconfig-private', dst: '.gitconfig-private'}
     - {src: 'gitconfig-ventx', dst: '.gitconfig-ventx'}
