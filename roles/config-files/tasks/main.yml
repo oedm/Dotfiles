@@ -1,6 +1,6 @@
 ---
 
-- name: Create ~/.config/* if it does not exist | file
+- name: Create ~/.config/* + .docker if it does not exist | file
   file:
     path: "{{ lookup('env', 'HOME') }}/{{ item }}"
     state: directory
@@ -9,6 +9,7 @@
     - '.config'
     - '.config/terminator'
     - '.config/helm'
+    - '.docker'
 
 - name: Link dotfiles | file
   file:
