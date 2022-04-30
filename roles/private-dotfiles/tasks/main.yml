@@ -1,0 +1,19 @@
+---
+# file: roles/private-dotfiles/tasks/main.yml
+
+- name: Checkout dotfiles-private repository
+  block:
+    # vault-secrets seems to be only unencrypted on i.E. copy
+    # src: https://docs.ansible.com/ansible/latest/user_guide/vault.html#when-are-encrypted-files-made-visible
+    - copy:
+        src: "{{role_path}}/files/bootstrapper"
+        dest: "{{ lookup('env', 'HOME') }}/.ssh/bootstrapper"
+        mode: '0600'
+
+    - git:
+        repo: "https://github.com/oedm/dotfiles-private"
+        dest: "{{ inventory_dir | dirname }}/dotfiles-private"
+        accept_hostkey: yes
+        key_file: "{{ lookup('env', 'HOME') }}/.ssh/bootstrapper"
+  when: privateInstall | bool
+  

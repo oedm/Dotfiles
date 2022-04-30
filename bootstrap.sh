@@ -7,7 +7,8 @@ export ROOTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Host file location
 HOSTS="$ROOTDIR/hosts"
 # Main playbook
-PLAYBOOK="$ROOTDIR/dotfiles.yml"
+PLAYBOOK="dotfiles.yml"
+DOTFILES_PRIVATE="$(dirname $(pwd))/dotfiles-private"
 
 if ! command -v ansible &> /dev/null;then
   echo "ansible not found. Attempt to install."
@@ -24,6 +25,22 @@ else
   echo "ansible already installed."
 fi
 
-ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass
+read -p "Should I also install the private dotfiles as well? (y/n)" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    ansible-playbook -i "$HOSTS" "$PLAYBOOK" \
+      --ask-become-pass --ask-vault-pass \
+      --extra-vars "privateInstall=True"
+    if [ -d "$DOTFILES_PRIVATE" ];then
+      cd $DOTFILES_PRIVATE
+      echo "Starting private part of deployment."
+      ansible-playbook -i "$HOSTS" "$PLAYBOOK" \
+      --ask-become-pass --ask-vault-pass
+    fi
+else
+    ansible-playbook -vv -i "$HOSTS" "$PLAYBOOK" \
+      --ask-become-pass
+fi
 
 exit 0

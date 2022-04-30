@@ -12,3 +12,6 @@
     - role: config-files
       tags:
         - config
+    - role: private-dotfiles
+      tags:
+        - private
