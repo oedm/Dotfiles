@@ -12,3 +12,4 @@
     - {src: 'git/gitconfig-private', dst: '.gitconfig-private'}
     - {src: 'git/gitconfig-ventx', dst: '.gitconfig-ventx'}
     - {src: 'docker/config.json', dst: '.docker/config.json'}
+    - {src: 'tmux.conf', dst: '.tmux.conf'}
