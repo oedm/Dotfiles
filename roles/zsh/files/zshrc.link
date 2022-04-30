@@ -68,7 +68,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast git-auto-fetch ssh-agent docker aws terraform zsh-autosuggestions)
+plugins=(gitfast ssh-agent docker aws terraform zsh-autosuggestions)
 FPATH=$FPATH:/home/moed/.oh-my-zsh/custom/completions
 
 export GOPATH="$HOME/projects/go"
@@ -77,6 +77,7 @@ export MANPAGER='most'
 export AWS_SDK_LOAD_CONFIG=1
 export AWS_PAGER=""
 #export AWS_DEFAULT_PROFILE="iac"
+export EDITOR=/usr/bin/vim
 
 alias kon='kubeon'
 alias k=kubectl
