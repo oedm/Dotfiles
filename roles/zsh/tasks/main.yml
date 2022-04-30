@@ -28,7 +28,7 @@
 
 - name: Links .zshrc file | file
   file:
-    src: "{{ lookup('env', 'ROOTDIR') }}/roles/zsh/files/zshrc.link"
+    src: "{{ role_path }}/files/zshrc.link"
     dest: "{{ lookup('env', 'HOME') }}/.zshrc"
     state: link
     force: yes
