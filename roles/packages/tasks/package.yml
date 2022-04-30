@@ -24,3 +24,16 @@
     - telnet
     - mc
     - amazon-ecr-credential-helper
+
+- name: Install Homebrew build tools | package
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - build-essential 
+    - procps 
+    - curl 
+    - file 
+    - git
+  when: ansible_distribution == 'Debian'

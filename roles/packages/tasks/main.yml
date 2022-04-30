@@ -1,16 +1,5 @@
 ---
 
-# Project DEAD :'( Time to move to homebrew.
-# - include_tasks: gofish.yml
-#   tags:
-#     - install
-#     - go
-
-- include_tasks: github.yml
-  tags:
-    - install
-    - github
-
 - include_tasks: package.yml
   when: >
     ansible_facts['os_family'] == 'Debian' or
@@ -18,3 +7,13 @@
   tags:
     - install
     - package
+
+- include_tasks: homebrew.yml
+  tags:
+    - install
+    - go
+
+- include_tasks: github.yml
+  tags:
+    - install
+    - github
