@@ -1,9 +1,10 @@
 ---
 
-- include_tasks: gofish.yml
-  tags:
-    - install
-    - go
+# Project DEAD :'( Time to move to homebrew.
+# - include_tasks: gofish.yml
+#   tags:
+#     - install
+#     - go
 
 - include_tasks: github.yml
   tags:
