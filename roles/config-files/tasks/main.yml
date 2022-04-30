@@ -13,3 +13,4 @@
     - {src: 'git/gitconfig-ventx', dst: '.gitconfig-ventx'}
     - {src: 'docker/config.json', dst: '.docker/config.json'}
     - {src: 'tmux.conf', dst: '.tmux.conf'}
+    - {src: 'terminator.conf', dst: '.config/terminator/config'}
