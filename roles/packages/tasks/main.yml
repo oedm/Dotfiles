@@ -9,3 +9,11 @@
   tags:
     - install
     - github
+
+- include_tasks: package.yml
+  when: >
+    ansible_facts['os_family'] == 'Debian' or
+    ansible_facts['os_family'] == 'RedHat'
+  tags:
+    - install
+    - package
