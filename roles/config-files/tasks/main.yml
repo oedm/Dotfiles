@@ -6,8 +6,9 @@
     state: link
     force: yes
   loop:
-    - {src: 'gitconfig', dst: '.gitconfig'}
-    - {src: 'gitconfig-dng', dst: '.gitconfig-dng'}
-    - {src: 'gitconfig-ecb', dst: '.gitconfig-ecb'}
-    - {src: 'gitconfig-private', dst: '.gitconfig-private'}
-    - {src: 'gitconfig-ventx', dst: '.gitconfig-ventx'}
+    - {src: 'git/gitconfig', dst: '.gitconfig'}
+    - {src: 'git/gitconfig-dng', dst: '.gitconfig-dng'}
+    - {src: 'git/gitconfig-ecb', dst: '.gitconfig-ecb'}
+    - {src: 'git/gitconfig-private', dst: '.gitconfig-private'}
+    - {src: 'git/gitconfig-ventx', dst: '.gitconfig-ventx'}
+    - {src: 'docker/config.json', dst: '.docker/config.json'}
