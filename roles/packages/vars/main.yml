@@ -15,3 +15,4 @@ gofish_packages:
 - stern
 - terraform-docs
 - tflint
+- tfsec

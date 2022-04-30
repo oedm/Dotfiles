@@ -7,6 +7,12 @@
     state: directory
     mode: '0750'
 
+- name: Create ~/.bin if it does not exist | file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.bin"
+    state: directory
+    mode: '0750'
+
 - name: Ensures ssh-agent environment file exists | file
   file:
     path: "{{ lookup('env', 'HOME') }}/.ssh/environment-{{ lookup('file', '/etc/hostname') }}"

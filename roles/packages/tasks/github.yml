@@ -12,3 +12,18 @@
     url: "https://github.com/99designs/aws-vault/releases/download/{{ awsvault_release['tag'] }}/aws-vault-linux-amd64"
     dest: /usr/local/bin/aws-vault
     mode: 0755
+
+- name: Checkout tfenv | git
+  git:
+    repo: https://github.com/tfutils/tfenv
+    dest: "{{ lookup('env', 'HOME') }}/.tfenv"
+
+- name: Link tfenv binaries into bin folder | file
+  file:
+    src: "{{ lookup('env', 'HOME') }}/{{ item.src }}"
+    dest: "{{ lookup('env', 'HOME') }}/{{ item.dst }}"
+    state: link
+    force: yes
+  loop:
+    - {src: '.tfenv/bin/terraform', dst: '.bin/terraform'}
+    - {src: '.tfenv/bin/tfenv', dst: '.bin/tfenv'}
