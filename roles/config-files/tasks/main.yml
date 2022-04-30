@@ -1,4 +1,15 @@
 ---
+
+- name: Create ~/.config/* if it does not exist | file
+  file:
+    path: "{{ lookup('env', 'HOME') }}/{{ item }}"
+    state: directory
+    mode: '0750'
+  loop:
+    - '.config'
+    - '.config/terminator'
+    - '.config/helm'
+
 - name: Link dotfiles | file
   file:
     src: "{{ lookup('env', 'ROOTDIR') }}/roles/config-files/files/{{ item.src }}"
@@ -14,3 +25,4 @@
     - {src: 'docker/config.json', dst: '.docker/config.json'}
     - {src: 'tmux.conf', dst: '.tmux.conf'}
     - {src: 'terminator.conf', dst: '.config/terminator/config'}
+    - {src: 'vimrc', dst: '.vimrc'}

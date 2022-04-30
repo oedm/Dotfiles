@@ -1,0 +1,32 @@
+syntax on                 " Aktiviert das Syntax Hervorhebung immer
+ 
+set background=dark       " Hilfreich bei Terminals mit dunklem Hintergrund
+                          " dann sieht man auch die Kommentare endlich wieder
+ 
+set title                 " Titel Text für moderne Terminals (Datei und Pfad)
+ 
+set modeline modelines=5  " Schaltet die Modeline Erkennung an
+ 
+set ts=2                  " Setzt den Tabstopp und die Shiftwidth (Sprungweite
+set sw=2                  " beim Einrücken) auf 4 Leerzeichen
+set expandtab             " Nie Tabstopps benutzen, sondern Leerzeichen
+set autoindent            " Automatisches Einrücken bei New-Line
+set smarttab              " Intelligenteres Löschen von Leerzeichen-Tabs
+ 
+set mouse-=a               " Schaltet die Maus Bedienung ein
+                          " Ein geniales Feature - nach etwas Eingewöhnung...
+                          " Tipp: mit Shift-Klick kann man ganz normal im
+                          " Terminal markieren
+                          " Achja: Mausrad funktioniert wunderbar!
+ 
+set hlsearch              " Hebt die aktuellen Suchergebnisse hervor
+
+set relativenumber number " Zeilennummern basierend auf der Cursorzeile
+ 
+" Tell vim to remember certain things when we exit
+"  10  :  marks will be remembered for up to 10 previously edited files
+"  100 :  will save up to 100 lines for each register
+"  20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo
