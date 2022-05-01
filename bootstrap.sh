@@ -4,6 +4,7 @@ set -e
 
 # Main playbook
 PLAYBOOK="dotfiles.yml"
+DOTFILES_PRIVATE="$(dirname $(pwd))/dotfiles-private"
 
 if ! command -v ansible &> /dev/null;then
   echo "ansible not found. Attempt to install."
