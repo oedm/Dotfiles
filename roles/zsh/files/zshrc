@@ -79,6 +79,11 @@ export AWS_SDK_LOAD_CONFIG=1
 export AWS_PAGER=""
 #export AWS_DEFAULT_PROFILE="iac"
 export EDITOR=/usr/bin/vim
+# WSL2 Stuff
+# apt install pass gnupg
+# gpg --gen-key
+# pass init <pub_key>
+export AWS_VAULT_BACKEND=pass
 
 # Homebrew stuff
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
