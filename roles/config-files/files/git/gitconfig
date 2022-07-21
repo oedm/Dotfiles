@@ -20,9 +20,11 @@
         diff = auto
         interactive = auto
         status = auto
-#[url "git@github.com:"]
-#	insteadOf = https://github.com/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 [credential]
 	helper = store
 [pager]
 	branch = false
+[core]
+	excludesFile = ~/.gitignore

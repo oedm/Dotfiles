@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/moed/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,10 +70,10 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(gitfast ssh-agent docker aws terraform zsh-autosuggestions)
-FPATH=$FPATH:/home/moed/.oh-my-zsh/custom/completions
+#FPATH=$FPATH:/home/moed/.oh-my-zsh/custom/completions
 
 export GOPATH="$HOME/projects/go"
-export PATH="$HOME/projects/go/bin:${HOME}/.local/bin:${HOME}/.krew/bin:${HOME}/.bin:$PATH"
+export PATH="$HOME/projects/go/bin:${HOME}/.local/bin:${HOME}/.krew/bin:${HOME}/.bin:/opt/homebrew/bin:$PATH"
 export MANPAGER='most'
 export AWS_SDK_LOAD_CONFIG=1
 export AWS_PAGER=""
@@ -83,15 +83,15 @@ export EDITOR=/usr/bin/vim
 # apt install pass gnupg
 # gpg --gen-key
 # pass init <pub_key>
-export AWS_VAULT_BACKEND=pass
+#export AWS_VAULT_BACKEND=pass
 
 # Homebrew stuff
-export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
-export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
-export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+#export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+#export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+#export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+#export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
+#export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+#export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
 alias kon='kubeon'
 alias k=kubectl
@@ -115,7 +115,6 @@ function beamsh() {
 # function load-plugin() {
 #   source $ZSH/plugins/"$1"/"$1".plugin.zsh
 # }
-
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
 source <(stern --completion=zsh)

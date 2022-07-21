@@ -3,6 +3,6 @@
     "_comment": "aws_account_id.dkr.ecr.region.amazonaws.com\": \"ecr-login",
     "public.ecr.aws": "ecr-login"
   },
-  "credsStore": "desktop.exe",
+  "credsStore": "desktop",
   "psFormat": "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.RunningFor}}\t{{.Ports}}"
 }

@@ -30,3 +30,5 @@ set relativenumber number " Zeilennummern basierend auf der Cursorzeile
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
+
+set backspace=indent,eol,start
