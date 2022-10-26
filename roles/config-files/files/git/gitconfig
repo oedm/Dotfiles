@@ -26,6 +26,7 @@
 	helper = store
 [pager]
 	branch = false
+	stash = false
 [core]
 	excludesFile = ~/.gitignore
 [push]
