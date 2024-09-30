@@ -104,20 +104,21 @@ function beamsh() {
   kubectl exec -ti "$1" sh
 }
 
-# function kubectl() {
-#   if ! type __start_kubectl >/dev/null 2>&1; then
-#     source <(command kubectl completion zsh)
-#   fi
+function kubectl() {
+  if ! type __start_kubectl >/dev/null 2>&1; then
+    source <(command kubectl completion zsh)
+  fi
 
-#   command kubectl "$@"
-# }
+  command kubectl "$@"
+}
 
-# function load-plugin() {
-#   source $ZSH/plugins/"$1"/"$1".plugin.zsh
-# }
+function load-plugin() {
+  source $ZSH/plugins/"$1"/"$1".plugin.zsh
+}
 source $ZSH/oh-my-zsh.sh
 source <(helm completion zsh)
 source <(stern --completion=zsh)
+source <(gh completion -s zsh)
 
 # Appends every command to the history file once it is executed
 setopt inc_append_history
