@@ -31,3 +31,9 @@
 	excludesFile = ~/.gitignore
 [push]
 	autoSetupRemote = true
+[pull]
+	rebase = true
+[gpg]
+	format = ssh
+[user]
+	signingkey = /Users/moed/.ssh/id_ed25519.pub
