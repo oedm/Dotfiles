@@ -6,8 +6,10 @@
     path = .gitconfig-ecb
 [includeIf "gitdir:~/projects/private/"]
     path = .gitconfig-private
-[init]
-        templateDir = /home/moed/.git-template
+[includeIf "gitdir:~/projects/itdz/"]
+    path = .gitconfig-itdz
+#[init]
+#        templateDir = /home/moed/.git-template
 [diff "sopsdiffer"]
         textconv = sops -d
 [merge "ours"]

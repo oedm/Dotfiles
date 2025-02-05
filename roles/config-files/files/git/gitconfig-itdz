@@ -1,0 +1,11 @@
+[user]
+name = Marcel Oed
+email = marcel.oed.extern@itdz-berlin.de
+signingkey = /Users/moed/.ssh/id_ed25519.pub
+
+#[url "https://gitlab-ef51.ef5.verwalt-berlin.de:23000"]
+#insteadOf = https://gitlab-ef51.ef5.verwalt-berlin.de:5100
+
+[http]
+sslVerify = false
+proxy = http://vpn.iops.at:23080
